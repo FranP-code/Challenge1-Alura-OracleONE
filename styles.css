@@ -6,6 +6,18 @@
     color: #343A40;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+    font-family: Be Vietnam Pro, sans-serif;
+}
+
+/* HEADER */
+
 header {
     font-family: Poppins, sans-serif;
     padding-left: 3vw;
@@ -25,8 +37,94 @@ header h1 .aditional-text {
     transition: 0.4s ease-in-out all;
 }
 
-header h1 .main-text:hover + .aditional-text{ /*credits: https://stackoverflow.com/a/4559346/18740899*/
+header h1 .main-text:hover + .aditional-text{ /* credits: https://stackoverflow.com/a/4559346/18740899 */
     /* display: initial; */
     opacity: 1;
     transition: 0.4s ease-in-out all;
+}
+
+/* MAIN */
+
+main {
+    width: 50%;
+    height: 70%;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-input {
+    
+    height: 100%;
+    width: 100%;
+    
+    padding: 2vh 1vw;
+
+    background: none;
+    
+    resize: none;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.219);
+    border-radius: 5px;
+    
+    font-family: Be Vietnam Pro, sans-serif;
+    font-size: 2em;
+    color: #0A3871;
+}
+
+.text-input::placeholder {
+    color: #0A387175;
+    user-select: none;
+}
+
+.warning-message {
+    display: flex;
+    align-items: center;
+
+    margin: 2vh 0px;
+    color: #495057;
+}
+
+.warning-message img {
+    margin-right: 5px;
+    user-select: none;
+}
+
+main .buttons-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+main button {
+    border: 1px solid #0A3871;;
+    border-radius: 24px;
+
+    font-size: 0.9em;
+
+    flex-grow: 1;
+    
+    padding: 2.5vh;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+main button.encrypt {
+    color: #fff;
+    background-color: #0A3871;
+    margin-right: 0.5vw;
+}
+
+main button.decrypt {
+    color: #0A3871;
+    background-color: #D8DFE8;
+    margin-left: 0.5vw;
+}
+
+main button:hover {
+    filter: brightness(130%);
+}
+
+main button:active {
+    filter: brightness(95%);
 }
