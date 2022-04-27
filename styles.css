@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    color: #343A40;
+}
+
+header {
+    font-family: Poppins, sans-serif;
+    padding-left: 3vw;
+}
+
+header h1 {
+    font-weight: 600;
+}
+
+header h1 .main-text {
+    font-size: 2em;
+}
+
+header h1 .aditional-text {
+    opacity: 0;
+    cursor: default;
+    transition: 0.4s ease-in-out all;
+}
+
+header h1 .main-text:hover + .aditional-text{ /*credits: https://stackoverflow.com/a/4559346/18740899*/
+    /* display: initial; */
+    opacity: 1;
+    transition: 0.4s ease-in-out all;
+}
