@@ -19,11 +19,15 @@ body {
 header {
     font-family: Poppins, sans-serif;
     padding-left: 3vw;
+    padding-right: 3vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
     font-weight: 600;
-
     color: #135bb3;
 }
 
@@ -41,6 +45,26 @@ header h1 .aditional-text {
 header h1 .main-text:hover + .aditional-text { /* credits: https://stackoverflow.com/a/4559346/18740899 */
     opacity: 1;
     transition: 0.4s ease-in-out all;
+}
+
+.theme-switch {
+    width: 65px;
+    height: 65px;
+    
+    border-radius: 100%;
+    border-width: 1px;
+    border-style: solid;
+
+    cursor: pointer;
+}
+
+.theme-switch.white {
+    border-color: rgb(252, 160, 40);
+    background: linear-gradient(rgb(255, 161, 37), rgb(248, 185, 103));
+    
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 2px;
 }
 
 /* MAIN */
