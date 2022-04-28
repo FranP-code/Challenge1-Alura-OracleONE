@@ -29,6 +29,7 @@ header h1 {
 
 header h1 .main-text {
     font-size: 2em;
+    cursor: default;
 }
 
 header h1 .aditional-text {
@@ -37,20 +38,23 @@ header h1 .aditional-text {
     transition: 0.4s ease-in-out all;
 }
 
-header h1 .main-text:hover + .aditional-text{ /* credits: https://stackoverflow.com/a/4559346/18740899 */
-    /* display: initial; */
+header h1 .main-text:hover + .aditional-text { /* credits: https://stackoverflow.com/a/4559346/18740899 */
     opacity: 1;
     transition: 0.4s ease-in-out all;
 }
 
 /* MAIN */
 
-main {
-    width: 50%;
-    height: 70%;
+.main-flex-container {
+    display: flex;
+    justify-content: space-around;
 
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0px 10vw;
+}
+
+main {
+    width: 45vw;
+    height: 70vh;
 }
 
 .text-input {
@@ -127,4 +131,34 @@ main button:hover {
 
 main button:active {
     filter: brightness(95%);
+}
+
+/* ASIDE */
+
+.history {
+    width: 30vw;
+    height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+    padding: 10vh 3vw 0px 3vw;
+
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+}
+
+.history img {
+    width: 330px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    filter: brightness(120%);
+
+    user-select: none;
+}
+
+.history h2, .history p {
+    text-align: center;
+    
 }
