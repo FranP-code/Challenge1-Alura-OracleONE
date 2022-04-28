@@ -2,8 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    color: #343A40;
 }
 
 html, body {
@@ -25,6 +23,8 @@ header {
 
 header h1 {
     font-weight: 600;
+
+    color: #135bb3;
 }
 
 header h1 .main-text {
