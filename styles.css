@@ -186,3 +186,27 @@ main button:active {
     text-align: center;
     
 }
+
+/* FOOTER */
+
+footer {
+
+    margin-top: 6vh;
+
+    padding: 2vh 2vw;
+
+    box-shadow: 0px -24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+footer p {
+    display: inline;
+    vertical-align: middle;
+}
+
+footer img {
+    width: 2em;
+    height: 2em;
+    margin-left: 1vw;
+
+    vertical-align:middle;
+}
