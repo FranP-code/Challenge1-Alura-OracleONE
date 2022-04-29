@@ -34,6 +34,18 @@ function encryptText(text) {
     return newText.join('')
 }
 
+//Decrypt text
+function decryptText(text) {
+    let newText = text
+    const regExps = [/enter/g, /imes/g, /ai/g, /ober/g, /ufat/g]
+    const letters = ["e", "i", "a", "o", "u"]
+
+    for (let i = 0; i < letters.length; i++) {
+        newText = newText.replace(regExps[i], letters[i])
+    }
+    
+    return newText
+}
     
 //Check invalid characters function
 function checkText(text) {
@@ -50,9 +62,12 @@ function checkText(text) {
 
 //Initialize DOM Elements
 const encryptButton = document.querySelector('main button.encrypt')
+const decryptButton = document.querySelector('main button.decrypt')
+
 const textInput = document.querySelector('main textarea.text-input')
 const history = document.querySelector('aside.history')
 
+//EncryptButton event
 encryptButton.addEventListener("click", () => {
 
     if (!checkText(textInput.value)) {
@@ -65,5 +80,20 @@ encryptButton.addEventListener("click", () => {
     history.classList.add("with-results")
     history.innerHTML = `
         <p class="result">${encryptedText}</p>
+    `
+})
+
+//DecryptButton event
+decryptButton.addEventListener("click", () => {
+    if (!checkText(textInput.value)) {
+        alert("Por favor, revise que el texto no contenga mayúsculas, símbolos, acentos o números.")
+        return
+    }
+
+    const decryptedText = decryptText(textInput.value)
+    
+    history.classList.add("with-results")
+    history.innerHTML = `
+        <p class="result">${decryptedText}</p>
     `
 })
