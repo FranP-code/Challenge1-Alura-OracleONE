@@ -14,6 +14,30 @@ body {
     font-family: Be Vietnam Pro, sans-serif;
 }
 
+button {
+    border: 1px solid #0A3871;;
+    border-radius: 24px;
+
+    font-size: 0.9em;
+    
+    padding: 2.5vh;
+    
+    cursor: pointer;
+    user-select: none;
+}
+
+button:hover {
+    filter: brightness(130%);
+}
+
+button:active {
+    filter: brightness(95%);
+}
+
+main button {
+    flex-grow: 1;
+}
+
 /* HEADER */
 
 header {
@@ -124,20 +148,6 @@ main .buttons-container {
     flex-wrap: nowrap;
 }
 
-main button {
-    border: 1px solid #0A3871;;
-    border-radius: 24px;
-
-    font-size: 0.9em;
-
-    flex-grow: 1;
-    
-    padding: 2.5vh;
-
-    cursor: pointer;
-    user-select: none;
-}
-
 main button.encrypt {
     color: #fff;
     background-color: #0A3871;
@@ -150,28 +160,37 @@ main button.decrypt {
     margin-left: 0.5vw;
 }
 
-main button:hover {
-    filter: brightness(130%);
-}
-
-main button:active {
-    filter: brightness(95%);
-}
-
 /* ASIDE */
 
 .history {
     width: 30vw;
-    height: 85vh;
-
+    height: 84.5vh;
+    
     display: flex;
     flex-direction: column;
-    padding: 10vh 3vw 0px 3vw;
+    justify-content: space-between;
+
+    padding: 10vh 3vw 9px 3vw;
 
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
 
     background-color: rgba(255, 255, 255, 0.199);
+}
+
+.history .texts {
+    display: flex;
+    flex-direction: column;
+}
+
+.history button.copy-last-text-message {
+    color: #0A3871;
+}
+
+.history button.copy-last-text-message.element-copied {
+    color: #fff;
+    border: none;
+    background-color: rgb(46, 125, 50);
 }
 
 .history img {

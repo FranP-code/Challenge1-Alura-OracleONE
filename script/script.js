@@ -61,13 +61,13 @@ function checkText(text) {
 }
 
 //Initialize DOM Elements
-const encryptButton = document.querySelector('main button.encrypt')
-const decryptButton = document.querySelector('main button.decrypt')
-
 const textInput = document.querySelector('main textarea.text-input')
 const history = document.querySelector('aside.history')
+const historyTexts = document.querySelector('aside.history .texts')
 
-//EncryptButton event
+//encryptButton event
+const encryptButton = document.querySelector('main button.encrypt')
+
 encryptButton.addEventListener("click", () => {
 
     if (!checkText(textInput.value)) {
@@ -78,12 +78,14 @@ encryptButton.addEventListener("click", () => {
     const encryptedText = encryptText(textInput.value)
     
     history.classList.add("with-results")
-    history.innerHTML = `
+    historyTexts.innerHTML = `
         <p class="result">${encryptedText}</p>
     `
 })
 
-//DecryptButton event
+//decryptButton event
+const decryptButton = document.querySelector('main button.decrypt')
+
 decryptButton.addEventListener("click", () => {
     if (!checkText(textInput.value)) {
         alert("Por favor, revise que el texto no contenga mayúsculas, símbolos, acentos o números.")
@@ -93,7 +95,31 @@ decryptButton.addEventListener("click", () => {
     const decryptedText = decryptText(textInput.value)
     
     history.classList.add("with-results")
-    history.innerHTML = `
+    historyTexts.innerHTML = `
         <p class="result">${decryptedText}</p>
     `
+})
+
+//copyButton event
+const copyButton = document.querySelector('aside.history button.copy-last-text-message')
+
+copyButton.addEventListener("click", () => {
+
+    const elements = historyTexts.querySelectorAll(".result")
+
+    if (elements.length === 0) {
+        return
+    }
+
+    navigator.clipboard.writeText(elements[elements.length - 1].textContent)
+
+    copyButton.classList.add("element-copied")
+    
+    const buttonTextContent = copyButton.textContent
+    copyButton.textContent = "👌"
+
+    setTimeout(() => {
+        copyButton.textContent = buttonTextContent 
+        copyButton.classList.remove("element-copied")
+    }, 1000)
 })
