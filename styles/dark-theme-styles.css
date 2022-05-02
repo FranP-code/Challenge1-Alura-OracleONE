@@ -4,11 +4,16 @@ body.dark-theme {
     background-color: #343A40;
 }
 
+body.dark-theme button:hover {
+    filter: brightness(110%);
+}
+
 body.dark-theme header h1 {
     color: #fffd79;
 }
 
 body.dark-theme .text-input {
+    border-color: rgb(104, 104, 104);
     color: #fff;
 }
 
@@ -26,9 +31,21 @@ body.dark-theme .warning-message img {
     color: #ee7676   
 }
 
+body.dark-theme main button.decrypt {
+    background-color: #7f2833;
+    border-color: #7f2833;
+    color: #fff;
+}
+
 body.dark-theme .history {
     box-shadow: none;
     background-color: rgba(255, 255, 255, 0.068);
+}
+
+body.dark-theme button.copy-last-text-message {
+    color: #fff;
+    border-color: #fff;
+    background: none;
 }
 
 body.dark-theme .history h2 {
