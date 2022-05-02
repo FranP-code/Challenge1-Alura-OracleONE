@@ -1,0 +1,49 @@
+/* THEME SETTINGS */
+
+body.dark-theme {
+    background-color: #343A40;
+}
+
+body.dark-theme header h1 {
+    color: #fffd79;
+}
+
+body.dark-theme .text-input {
+    color: #fff;
+}
+
+body.dark-theme .text-input::placeholder {
+    color: rgb(117, 117, 117);
+}
+
+body.dark-theme .warning-message {
+    color: rgb(184, 184, 184); 
+}
+
+body.dark-theme .warning-message img {
+    filter: invert(60%) sepia(42%) saturate(1158%) hue-rotate(313deg) brightness(97%) contrast(93%); 
+    /* https://isotropic.co/tool/hex-color-to-css-filter/ */
+    color: #ee7676   
+}
+
+body.dark-theme .history {
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.068);
+}
+
+body.dark-theme .history h2 {
+    margin-top: 10px;
+}
+
+body.dark-theme .history h2, body.dark-theme .history p {
+    color: #fff;
+}
+
+body.dark-theme footer {
+    color: #fff;
+}
+
+body.dark-theme footer .github-image {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(69deg) brightness(110%) contrast(101%);
+    /* https://isotropic.co/tool/hex-color-to-css-filter/ */
+}
