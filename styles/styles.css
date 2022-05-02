@@ -189,7 +189,7 @@ main button.decrypt {
 
 .history button.copy-last-text-message.element-copied {
     color: #fff;
-    border: none;
+    border: 1px solid rgb(46, 125, 50);
     background-color: rgb(46, 125, 50);
 }
 
@@ -256,4 +256,78 @@ footer img {
     margin-left: 1vw;
 
     vertical-align:middle;
+    user-select: none;
+}
+
+/* RESPONSIVE DESING */
+
+@media (max-width: 768px) {
+    .main-flex-container {
+        flex-direction: column;
+    }
+
+    main {
+        height: 90vh;
+        width: 100%;
+    }
+
+    .text-input {
+        height: 80%;
+    }
+
+    .history {
+        width: 100%;
+        height: auto;
+    }
+
+    .history img {
+        display: none;
+    }
+
+    .history button.copy-last-text-message {
+        margin-top: 1vh;
+    }
+
+    footer {
+        padding: 5vh 2vw;
+    }
+}
+
+@media (max-width: 375px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 2vh 3vw;
+    }
+
+    header h1 .aditional-text {
+        opacity: 0.7;
+    }
+
+    .main-flex-container {
+        padding: 0px 3vw;
+    }
+
+    main {
+        height: 100vh;
+    }
+
+    .text-input {
+        height: 70%;
+    }
+
+    main .buttons-container {
+        flex-direction: column;
+    }
+
+    main .buttons-container :nth-child(1) {
+        margin-bottom: 2vh;
+    }
+
+    footer p {
+        display: block;
+        margin-bottom: 1vh;
+    }
 }
