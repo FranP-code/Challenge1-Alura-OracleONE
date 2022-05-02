@@ -8,7 +8,9 @@ copyButton.addEventListener("click", () => {
         return
     }
 
-    navigator.clipboard.writeText(elements[elements.length - 1].textContent)
+    const arr = [...elements].reverse()
+
+    navigator.clipboard.writeText(arr[arr.length - 1].textContent)
 
     copyButton.classList.add("element-copied")
     

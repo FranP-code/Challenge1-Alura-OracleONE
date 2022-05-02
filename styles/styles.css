@@ -212,10 +212,12 @@ main button.decrypt {
 /* ASIDE WHEN HAVE RESULT ELEMENTS */
 
 .history.with-results {
-    padding-top: 0;
+    padding-top: 2vh;
     padding-bottom: 1vh;
-    overflow-y: scroll
+}
 
+.history.with-results .texts {
+    overflow-y: auto;
 }
 
 .history p.result {
@@ -224,6 +226,8 @@ main button.decrypt {
     text-align: start;
 
     padding-bottom: 7px;
+
+    margin-bottom: 3vh;
 
     border-bottom: 1px solid rgb(211, 211, 211);
 }

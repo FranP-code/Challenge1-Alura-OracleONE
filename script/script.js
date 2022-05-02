@@ -1,3 +1,5 @@
+const history = []
+
 //Encrypt text function
 function encryptText(text) {
     let newText = []
@@ -62,8 +64,8 @@ function checkText(text) {
 
 //Initialize DOM Elements
 const textInput = document.querySelector('main textarea.text-input')
-const history = document.querySelector('aside.history')
-const historyTexts = document.querySelector('aside.history .texts')
+const historyElement = document.querySelector('aside.history')
+const historyTexts = document.querySelector(".history .texts")
 
 //encryptButton event
 const encryptButton = document.querySelector('main button.encrypt')
@@ -76,11 +78,7 @@ encryptButton.addEventListener("click", () => {
     }
 
     const encryptedText = encryptText(textInput.value)
-    
-    history.classList.add("with-results")
-    historyTexts.innerHTML = `
-        <p class="result">${encryptedText}</p>
-    `
+    addElementToHistory(encryptedText)
 })
 
 //decryptButton event
@@ -93,9 +91,27 @@ decryptButton.addEventListener("click", () => {
     }
 
     const decryptedText = decryptText(textInput.value)
-    
-    history.classList.add("with-results")
-    historyTexts.innerHTML = `
-        <p class="result">${decryptedText}</p>
-    `
+    addElementToHistory(decryptedText)
 })
+
+//history functions
+
+function addElementToHistory(text){
+    const element = document.createElement("p")
+    element.classList.add("result")
+    element.textContent = text
+
+    history.unshift(element)
+    applyHistory()
+}
+
+function applyHistory() {
+    const documentFragment = document.createDocumentFragment()
+    
+    history.forEach(element => {
+        documentFragment.appendChild(element)
+    });
+    
+    historyTexts.replaceChildren(documentFragment)
+    historyElement.classList.add("with-results")
+}
